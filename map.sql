@@ -1,0 +1,10 @@
+INSERT INTO `map`(`location_id`, `location`, `anna nagar`, `egmore`, `nungambakam`, `vadapalani`, `tnagar`, `porur`, `guindy`, `adyar`, `velachery`, `chromepet`) VALUES (1,'anna nagar',0,8,7,5,9,11,15,16,18,21);
+INSERT INTO `map`(`location_id`, `location`, `anna nagar`, `egmore`, `nungambakam`, `vadapalani`, `tnagar`, `porur`, `guindy`, `adyar`, `velachery`, `chromepet`) VALUES (2,'egmore',8,0,4,8,7,15,14,11,15,22);
+INSERT INTO `map`(`location_id`, `location`, `anna nagar`, `egmore`, `nungambakam`, `vadapalani`, `tnagar`, `porur`, `guindy`, `adyar`, `velachery`, `chromepet`) VALUES (3,'nungambakam',7,4,0,5,4,11,12,10,13,19);
+INSERT INTO `map`(`location_id`, `location`, `anna nagar`, `egmore`, `nungambakam`, `vadapalani`, `tnagar`, `porur`, `guindy`, `adyar`, `velachery`, `chromepet`) VALUES (4,'vadapalani',5,8,5,0,5,7,9,13,13,15);
+INSERT INTO `map`(`location_id`, `location`, `anna nagar`, `egmore`, `nungambakam`, `vadapalani`, `tnagar`, `porur`, `guindy`, `adyar`, `velachery`, `chromepet`) VALUES (5,'tnagar',9,7,4,5,0,10,9,9,10,16);
+INSERT INTO `map`(`location_id`, `location`, `anna nagar`, `egmore`, `nungambakam`, `vadapalani`, `tnagar`, `porur`, `guindy`, `adyar`, `velachery`, `chromepet`) VALUES (6,'porur',11,15,11,7,10,0,12,15,15,17);
+INSERT INTO `map`(`location_id`, `location`, `anna nagar`, `egmore`, `nungambakam`, `vadapalani`, `tnagar`, `porur`, `guindy`, `adyar`, `velachery`, `chromepet`) VALUES (7,'guindy',15,14,12,9,9,12,0,7,6,12);
+INSERT INTO `map`(`location_id`, `location`, `anna nagar`, `egmore`, `nungambakam`, `vadapalani`, `tnagar`, `porur`, `guindy`, `adyar`, `velachery`, `chromepet`) VALUES (8,'adyar',16,11,10,13,9,15,7,0,7,17);
+INSERT INTO `map`(`location_id`, `location`, `anna nagar`, `egmore`, `nungambakam`, `vadapalani`, `tnagar`, `porur`, `guindy`, `adyar`, `velachery`, `chromepet`) VALUES (9,'velachery',18,15,13,13,10,15,6,7,0,13);
+INSERT INTO `map`(`location_id`, `location`, `anna nagar`, `egmore`, `nungambakam`, `vadapalani`, `tnagar`, `porur`, `guindy`, `adyar`, `velachery`, `chromepet`) VALUES (10,'chromepet',21,22,19,15,16,17,12,17,13,0);

@@ -12,7 +12,7 @@ Patient
 </HEAD>
 <body bgcolor="lavender">
 <br><br>
-<font size="26" color="black">SIMS HOSPITAL</FONT>
+<font size="26" color="black"><b>Online Healthcare System</b></FONT>
 <br><br><br>
 <FORM NAME="patient" METHOD="POST" ACTION="patient_signup.html">
 <CENTER><INPUT TYPE="SUBMIT" VALUE="Sign up"><BR><BR></CENTER><BR><BR>

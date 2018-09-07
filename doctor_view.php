@@ -35,16 +35,11 @@ Ouestion
 </HEAD>
 <body bgcolor="lavender">
 <br><br>
-<font size="26" color="black">SIMS HOSPITAL</FONT>
+<font size="26" color="black"><b>Online Healthcare System</b></FONT>
 <br><br><br>
 
 <form method = "POST" action="list_patients.php">
 	<input type="submit" value="View Appointments">
 </form>
-
-<form method = "POST" action="write_description.php">
-	<input type="submit" value="Write Description">
-</form>
-
 </body>
 </html>
