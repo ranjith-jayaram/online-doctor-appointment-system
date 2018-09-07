@@ -26,7 +26,7 @@ if($rowcount != 1){
 else{
 	echo "Welcome";
 	$row = $result->fetch_assoc();
-    $_SESSION["pharmasist_id"] = $row["pharmacy_id"];
+    $_SESSION["pharmacy_id"] = $row["pharmacy_id"];
 	header("Location: http://localhost/hospital%20management/pharmasist_view.php"); /* Redirect browser */
 	//exit();
 }

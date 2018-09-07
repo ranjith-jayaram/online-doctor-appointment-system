@@ -26,6 +26,25 @@ $desc_id = $conn->insert_id;
 $sql = "DELETE FROM appointment where appointment_id = '$selected_appointment_id'";
 $result=mysqli_query($conn,$sql);
 
+$sql = "SELECT * FROM history where doc_id = '$doc_id' AND patient_id = '$selected_patient_id'";
+$result=mysqli_query($conn,$sql);
+
+if ($result->num_rows == 0) {
+
+	$sqlinsert = "INSERT INTO history(doc_id,patient_id,count) values ('$doc_id','$selected_patient_id',1)";
+	$result=mysqli_query($conn,$sqlinsert);
+}
+else {
+	$row = $result->fetch_assoc();
+	$hcount = $row["count"];
+	$hcount=$hcount+1;
+	$sqlupdate = "UPDATE history SET count='$hcount' where doc_id = '$doc_id' AND patient_id = '$selected_patient_id'";
+	$result=mysqli_query($conn,$sqlupdate);
+
+}
+
+
+
 while($count > 0){
 
 	$tempname = "name_" . $count;

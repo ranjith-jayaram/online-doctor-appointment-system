@@ -1,7 +1,7 @@
 <?php
 session_start();
-$pharmasist_id = $_SESSION["pharmasist_id"];
-if($pharmasist_id){
+$pharmacy_id = $_SESSION["pharmacy_id"];
+if($pharmacy_id){
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -13,7 +13,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT * FROM pharmacy where pharmacy_id ='$pharmasist_id'";
+$sql = "SELECT * FROM pharmacy where pharmacy_id ='$pharmacy_id'";
 $result=mysqli_query($conn,$sql);
 
 $rowcount=mysqli_num_rows($result);
@@ -35,8 +35,9 @@ Ouestion
 </HEAD>
 <body bgcolor="lavender">
 <br><br>
-<font size="26" color="black">SIMS HOSPITAL</FONT>
+<font size="26" color="black"><b>Online Healthcare System</b></FONT>
 <br><br><br>
-Under Construction
+<form method = "POST" action="view_orders.php">
+	<input type="submit" value="View Orders">
 </body>
 </html>

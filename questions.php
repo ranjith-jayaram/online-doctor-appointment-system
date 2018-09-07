@@ -32,13 +32,54 @@ else{
 <TITLE>
 Ouestion
 </TITLE>
+<script>
+	function booking(){
+		var x = document.getElementById("book");
+		if (x.style.display === "none") {
+	        x.style.display = "block";
+	    } else {
+	        x.style.display = "none";
+	    }
+	}
+</script>
 </HEAD>
 <body bgcolor="lavender">
 <br><br>
-<font size="26" color="black">SIMS HOSPITAL</FONT>
-<br><br><br>
 
+<form method = "POST" action="upcoming_appointments.php">
+	<input type="submit" value="View Appointments">
+</form>
+
+<form method = "POST" action="view_descriptions.php">
+	<input type="submit" value="View Descriptions">
+</form>
+
+<button onclick="booking()">Book Appointment</button><br><br>
+
+<div id="order" style="display: none">
+<br><br>
+hahaha
+</div>
+
+<div id="book" style="display: none">
+	<br><br>
 <form method = "POST" action="algorithm.php">
+
+	Booking type:<br>
+	<select name="specid">
+	  <option value="0">--SELECT--</option>
+	  <option value="101">Skin Problems</option>
+	  <option value="102">Sugar Problem</option>
+	  <option value="103">Mental Instability</option>
+	  <option value="104">Heart Problems</option>
+	  <option value="105">Dental</option>
+	  <option value="106">General Operation</option>
+	  <option value="107">Eye Care</option>
+	  <option value="108">Child Specialist</option>
+	  <option value="109">Injuries</option>
+	  <option value="110">Reproductive Problems</option>
+	</select>
+	<br><br>
 
 	Time:<br>
 	<select name="timeofapp">
@@ -52,7 +93,6 @@ Ouestion
 	  <option value="4">4:00</option>
 	  <option value="5">5:00</option>
 	  <option value="6">6:00</option>
-
 	</select>
 	<br><br>
 
@@ -60,44 +100,9 @@ Ouestion
 	<input name = "dateofapp" type = "text">
 	<br><br>	
 
-	Type:<br>
-	<select name="type">
-	  <option value="1">Normal</option>
-	  <option value="2">Dental care</option>
-	  <option value="3">Eye Care</option>
-	  <option value="4">Others</option>
-	</select>
-	<br><br>
-
-	What Problem do you have:<br>
-	<select name="problem">
-	  <option value="1">head ache</option>
-	  <option value="2">body pain</option>
-	  <option value="3">stomach pain</option>
-	  <option value="4">external wound</option>
-	  <option value="5">chest pain</option>
-	</select>
-	<br><br>
-
-	For how many days do you have it?:<br>
-	<select name="problem">
-	  <option value="1">1</option>
-	  <option value="2">2</option>
-	  <option value="3">3</option>
-	  <option value="4">more than 3</option>
-	</select>
-	<br><br>
-
-	severity:<br>
-	<select name="problem">
-	  <option value="1">low</option>
-	  <option value="2">medium</option>
-	  <option value="3">high</option>
-	</select>
-	<br><br>
-
-	<input type="submit" value="Search">
+		<input type="submit" value="Search">
 
 </form>
+</div>
 </body>
 </html>

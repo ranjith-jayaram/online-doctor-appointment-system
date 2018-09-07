@@ -4,12 +4,15 @@ CREATE TABLE IF NOT EXISTS `doctor` (
   `phone_no` varchar(20) NOT NULL UNIQUE,
   `password` varchar(20) NOT NULL,
   `specialization` varchar(50) NOT NULL,
-  `spec_id` int(20) NOT NULL,
+  `specialization_id` int(20) NOT NULL,
   `patient_count` int(5) NOT NULL,
-  `succ_rate` int(3) NOT NULL,
+  `success_rate` varchar(20) NOT NULL,
   `experience` int(2) NOT NULL,
   `qualification` varchar(50) NOT NULL,
+  `location` varchar(50) NOT NULL,
+  `location_id` int(20) NOT NULL,
   `rating` int(1) NOT NULL,
+  `available_time` varchar(50) NOT NULL,
   PRIMARY KEY (`doc_id`)
 );
 
@@ -19,6 +22,7 @@ CREATE TABLE IF NOT EXISTS `patient` (
   `phone_no` varchar(20) NOT NULL UNIQUE,
   `password` varchar(20) NOT NULL,
   `address` varchar(100) NOT NULL,
+  `location` varchar(20) NOT NULL,
   PRIMARY KEY (`patient_id`)
 );
 
@@ -38,6 +42,31 @@ CREATE TABLE IF NOT EXISTS `description` (
   `doc_id` int(20) NOT NULL,
   `description` varchar(100) NOT NULL,
   PRIMARY KEY (`desc_id`)
+);
+
+CREATE TABLE IF NOT EXISTS `history` (
+  `doc_id` int(20) NOT NULL,
+  `patient_id` int(20) NOT NULL,
+  `count` int(200) NOT NULL,
+  PRIMARY KEY (`doc_id`,`patient_id`)
+);
+
+CREATE TABLE IF NOT EXISTS `map` (
+  `location_id` int(20) NOT NULL,
+  `location` varchar(20) NOT NULL,
+  `anna nagar` int(20) NOT NULL,
+  `egmore` int(20) NOT NULL,
+  `nungambaakam` int(20) NOT NULL,
+  `vadapalani` int(20) NOT NULL,
+  `tnagar` int(20) NOT NULL,
+  `mylapore` int(20) NOT NULL,
+  `porur` int(20) NOT NULL,
+  `guindy` int(20) NOT NULL,
+  `adyar` int(20) NOT NULL,
+  `velachery` int(20) NOT NULL,
+  `chromepet` int(20) NOT NULL,
+  `palavakkam` int(20) NOT NULL,
+  PRIMARY KEY (`location_id`)
 );
 
 CREATE TABLE IF NOT EXISTS `description_expansion` (
@@ -75,5 +104,6 @@ CREATE TABLE IF NOT EXISTS `patient_booking` (
   `patient_id` int(20) NOT NULL,
   `pharmacy_id` int(20) NOT NULL,
   `desc_id` int(20) NOT NULL,
-  PRIMARY KEY (`patient_id`,`pharmacy_id`,`desc_id`)
+  `delivered` varchar(20) NOT NULL,
+  PRIMARY KEY (`desc_id`)
 );
