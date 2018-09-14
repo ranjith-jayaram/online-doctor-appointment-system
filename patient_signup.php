@@ -15,8 +15,9 @@ $name = $_POST["name"];
 $phno = $_POST["phno"];
 $pw = $_POST["pw"];
 $add = $_POST["add"];
+$loc = $_POST["loc"];
 
-$sql = "INSERT INTO patient (name,phone_no,password,address) VALUES('$name','$phno','$pw','$add')";
+$sql = "INSERT INTO patient (name,phone_no,password,address,location) VALUES('$name','$phno','$pw','$add','$loc')";
 
 $result = mysqli_query($conn,$sql);
 

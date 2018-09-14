@@ -1,7 +1,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-Patient
+Pharmasist Signup
 </TITLE>
 </HEAD>
 <body bgcolor="lavender">
@@ -10,24 +10,27 @@ Patient
 
 
 	<form method = "POST" action="pharmasist_signup.php">
-		<label>Name:<br>
-			<input name="name" type="text">
+		<label>Name:*<br>
+			<input name="name" type="text" required>
 		</label>
 		<br><br><br>
-		<label>Phone Number:<br>
-			<input name="phno" type="text">
+		<label>Phone Number:*<br>
+			<input name="phno" type="text" required>
 		</label>
 		<br><br><br>
-		<label>Password:<br>
-			<input name="pw" type="password">
+		<label>Password:*<br>
+			<input name="pw" type="password" required>
 		</label>
 		<br><br><br>
-		<label>Address:<br>
-			<input name="add" type="text">
+		<label>Address:*<br>
+			<input name="add" type="text" required>
 		</label>
 		<br><br><br>
+		
 		<input type="submit" value="Sign Up">
 	</form>
+<a href="home.html">home</a>
+<a href="pharmasist_home.html">back</a>
 
 
 </body>

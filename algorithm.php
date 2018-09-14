@@ -1,13 +1,14 @@
 <?php
 session_start();
 
-function calculateMatch($history,$distance,$experience,$succ_rate)
+function calculateMatch($history,$distance,$experience,$succ_rate,$rating)
 {
-	$hr=$history*3/10;
-	$dr=$distance*3/10;
-	$er=$experience*2/10;
-	$sr=$succ_rate*2/10;
-	$match=$hr+$dr+$er+$sr;
+	$hr=$history*6/25;
+	$dr=$distance*6/25;
+	$er=$experience*4/25;
+	$sr=$succ_rate*4/25;
+	$rr=$rating*5/25;
+	$match=$hr+$dr+$er+$sr+$rr;
 	return $match;
 }
 
@@ -63,7 +64,10 @@ if ($result->num_rows > 0) {
 		$currcount = $rowtemp["count"];
 		// echo "currcou:".$currcount;
 
-		$history = ($currcount/$total_booking)*100;
+		$history = 50;
+		if($total_booking!=0){
+			$history = ($currcount/$total_booking)*100;
+		}
 		// echo "<br>history:".$history;
 
 		$currlocation = $row["location"];
@@ -82,13 +86,15 @@ if ($result->num_rows > 0) {
 		$experience = 10*$row["experience"];
 		//echo "<br>experience:".$experience;
 
+		$rating = 20*$row["rating"];
+
 
 		$succ_rate = $row["succ_rate"];
 		//echo "<br>succ_rate:".$succ_rate;
 
-		$match = calculateMatch($history,$distance,$experience,$succ_rate);
+		$match = calculateMatch($history,$distance,$experience,$succ_rate,$rating);
 
-        echo "<form method = 'POST' action='booking.php'><h3>". $row["name"]. "<br>match = ".$match."%</h3><input name='selected_doc_id' type='text' value=". $row["doc_id"]." hidden><input name='timeofapp' type='text' value=". $timeofapp ." hidden><input name='dateofapp' type='text' value=". $dateofapp ." hidden>Patient Count: " . $row["patient_count"]. "<br>Success Rate: " . $row["succ_rate"]. "<br>Experience: " . $row["experience"]. "<br><input type='submit' value='Book'></form><br>";
+        echo "<form method = 'POST' action='booking.php'><h3>". $row["name"]. "<br>match = ".$match."%</h3><input name='selected_doc_id' type='text' value=". $row["doc_id"]." hidden><input name='timeofapp' type='text' value=". $timeofapp ." hidden><input name='dateofapp' type='text' value=". $dateofapp ." hidden>Patient Count: " . $row["patient_count"]. "<br>Success Rate: " . $row["succ_rate"]. "<br>Experience: " . $row["experience"]. "<br>Location: " . $row["location"]. "<br><input type='submit' value='Book'></form><br>";
 
     }
 } else {

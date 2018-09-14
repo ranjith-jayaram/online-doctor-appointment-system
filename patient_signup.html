@@ -1,7 +1,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-Patient
+Patient Signup
 </TITLE>
 </HEAD>
 <body bgcolor="lavender">
@@ -10,25 +10,42 @@ Patient
 
 
 	<form method = "POST" action="patient_signup.php">
-		<label>Name:<br>
-			<input name="name" type="text">
+		<label>Name:*<br>
+			<input name="name" type="text" required>
 		</label>
 		<br><br><br>
-		<label>Phone Number:<br>
-			<input name="phno" type="text">
+		<label>Phone Number:*<br>
+			<input name="phno" type="text" required>
 		</label>
 		<br><br><br>
-		<label>Password:<br>
-			<input name="pw" type="password">
+		<label>Password:*<br>
+			<input name="pw" type="password" required>
 		</label>
 		<br><br><br>
-		<label>Address:<br>
-			<input name="add" type="text">
+		<label>Address:*<br>
+			<input name="add" type="text" required>
 		</label>
+		<br><br><br>
+		City(Nearest):*<br>
+		<select name="loc">
+			<option value="0">--SELECT--</option>
+			<option value="anna nagar">anna nagar</option>
+			<option value="egmore">egmore</option>
+			<option value="nungambaakam">nungambaakam</option>
+			<option value="vadapalani">vadapalani</option>
+			<option value="tnagar">tnagar</option>
+			<option value="porur">porur</option>
+			<option value="guindy">guindy</option>
+			<option value="adyar">adyar</option>
+			<option value="velachery">velachery</option>
+			<option value="chromepet">chromepet</option>
+		</select>
 		<br><br><br>
 		<input type="submit" value="Sign Up">
 	</form>
 
+<a href="home.html">home</a>
+<a href="patient_home.html">back</a>
 
 </body>
 </html>

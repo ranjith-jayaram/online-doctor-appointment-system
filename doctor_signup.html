@@ -1,8 +1,29 @@
 <HTML>
 <HEAD>
 <TITLE>
-Patient
+Doctor Singnup
 </TITLE>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
 </HEAD>
 <body bgcolor="lavender">
 <br><br>
@@ -10,34 +31,79 @@ Patient
 
 
 	<form method = "POST" action="doctor_signup.php">
-		<label>Name:<br>
-			<input name="name" type="text">
+		<div class="row">
+  		<div class="column">
+		<label>Name:*<br>
+			<input name="name" type="text" required>
 		</label>
 		<br><br><br>
-		<label>Phone Number:<br>
-			<input name="phno" type="text">
+		<label>Phone Number:*<br>
+			<input name="phno" type="text" required>
 		</label>
 		<br><br><br>
-		<label>Password:<br>
-			<input name="pw" type="password">
-		</label>
-		
-		<br><br><br>
-		<label>No of patients attended:<br>
-			<input name="pat_atd" type="text">
+		<label>Password:*<br>
+			<input name="pw" type="password" required>
 		</label>
 		<br><br><br>
-		<label>Success Rate in percent:<br>
-			<input name="sr" type="text">
+		<label>Qualification:*<br>
+			<input name="qual" type="text" required>
 		</label>
 		<br><br><br>
-		<label>Experience in years:<br>
-			<input name="exp" type="text">
+		Specialization:*<br>
+		<select name="spl">
+			<option value="0">--SELECT--</option>
+			<option value="101">dermatologist</option>
+			<option value="102">diabetologist</option>
+			<option value="103">psychiatrist</option>
+			<option value="104">cardiologist</option>
+			<option value="105">dental surgeon</option>
+			<option value="106">surgeon</option>
+			<option value="107">ophthalmologist</option>
+			<option value="108">paediatrician</option>
+			<option value="109">orthopaedic surgeon</option>
+			<option value="110">gynaecologist</option>
+		</select>
+	</div>
+	<div class="column">
+		<label>No of patients attended:*<br>
+			<input name="pat_atd" type="text" required>
 		</label>
 		<br><br><br>
+		<label>Success Rate in percent:*<br>
+			<input name="sr" type="text" required>
+		</label>
+		<br><br><br>
+		<label>Experience in years:*<br>
+			<input name="exp" type="text" required>
+		</label>
+		<br><br><br>
+		<label>Rating*<br>
+			<input name="rate" type="text" required>
+		</label>
+		<br><br><br>
+		City(Nearest):*<br>
+		<select name="loc">
+			<option value="0">--SELECT--</option>
+			<option value="1">anna nagar</option>
+			<option value="2">egmore</option>
+			<option value="3">nungambaakam</option>
+			<option value="4">vadapalani</option>
+			<option value="5">tnagar</option>
+			<option value="6">porur</option>
+			<option value="7">guindy</option>
+			<option value="8">adyar</option>
+			<option value="9">velachery</option>
+			<option value="10">chromepet</option>
+		</select>
+	</div></div>
+	<input name="avail_time" type="text" value="9.00 am to 8.00 pm" hidden>
+		<br><br><br>
+		<br>		
 		<input type="submit" value="Sign Up">
 	</form>
 
+<a href="home.html">home</a>
+<a href="doctor_home.html">back</a>
 
 </body>
 </html>
